@@ -21,3 +21,8 @@ Folder : backend
 mongodb Url : https://account.mongodb.com
 
 mongoose Url : https://mongoosejs.com/
+
+--- Models
+- bookModel.js
+- schema
+
