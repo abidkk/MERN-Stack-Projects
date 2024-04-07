@@ -98,7 +98,21 @@ app.put("/books/:id", async (request, response) => {
   });
   
   
+// Delete single book by Delete method
+app.delete("/books/:id", async (request, response) => {
+try{
+    const {id} = request.params;
 
+    const result = await Book.findByIdAndDelete(id);
+if (!result) {
+    return response.status(404).json({message:"Book not found"})
+}
+return response.status(200).json({message:"Book Deleted successfully"})
+}catch (error) {
+
+}console.log(error.message)
+return response.status(500).send({message:error.message});
+})
 
 
 
