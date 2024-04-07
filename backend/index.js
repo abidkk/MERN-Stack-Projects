@@ -13,18 +13,20 @@ app.get("/", (request, response) => {
   response.status(200).send({ message: "Hello World!" });
 });
 
-// Get books
-app.get("/books", (request, response) => {
+// Get All books
+app.get("/books", async (request, response) => {
     try{
-        response.status(200).send(book)
+        const books = await Book.find({})
+        response.status(200).json(books)
     }
     catch(err){
         console.log(err)
+        response.status(500).send({message: err.message})
     }
 })
 
 
-// POST method to Save a new book
+//Save a new Book : with Post Method
 app.post("/books", async (request, response) => {
   try {
     if (
