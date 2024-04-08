@@ -22,7 +22,64 @@ mongodb Url : https://account.mongodb.com
 
 mongoose Url : https://mongoosejs.com/
 
---- Models
+# Models
 - bookModel.js
 - schema
 
+
+
+
+# Cors Policy 
+- npm i cors 
+- import cors from 'cors'
+- app.use(cors())
+or
+- app.use(cors({
+    origin: 'https://localhost:3002',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}))
+
+
+
+
+
+
+
+
+
+
+
+==> Frontend
+npm create vite@latest 
+- project name
+- react
+- Javsacript
+
+=> cd project name
+- npm i 
+
+
+=> Add tailwind css 
+connamds
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
+
+- open index.css and clear then paste
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+- delete app.css
+
+
+=> app.jsx is main file
+
+
+--- React Router DOM
+- npm i react-router-dom
+--- in main.jsx
+- import { BrowserRouter } from 'react-router-dom'
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
